@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "RtMidi.h"
+#include "../RtMidi/RtMidi.h"
 #include "board.h"
 
 class board_controller
@@ -10,7 +10,6 @@ public:
 
 	int setup();
 	int open();
-	void initialize(input& in) const;
 
 private:
 	const bool _use_out;

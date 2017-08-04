@@ -119,28 +119,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="board.cpp" />
-    <ClCompile Include="board_controller.cpp" />
-    <ClCompile Include="button.cpp" />
-    <ClCompile Include="input.cpp" />
+    <ClCompile Include="Board\board.cpp" />
+    <ClCompile Include="Board\board_controller.cpp" />
+    <ClCompile Include="Input\button.cpp" />
+    <ClCompile Include="Input\input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="nanoKONTROL2.cpp" />
-    <ClCompile Include="range.cpp" />
-    <ClCompile Include="RtMidi.cpp" />
-    <ClCompile Include="rtmidi_c.cpp" />
-    <ClCompile Include="toggle.cpp" />
+    <ClCompile Include="Input\range.cpp" />
+    <ClCompile Include="RtMidi\RtMidi.cpp" />
+    <ClCompile Include="RtMidi\rtmidi_c.cpp" />
+    <ClCompile Include="Input\toggle.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="board.h" />
-    <ClInclude Include="board_controller.h" />
-    <ClInclude Include="button.h" />
-    <ClInclude Include="input.h" />
+    <ClInclude Include="Board\board.h" />
+    <ClInclude Include="Board\board_controller.h" />
+    <ClInclude Include="Input\button.h" />
+    <ClInclude Include="Input\input.h" />
     <ClInclude Include="nanoKONTROL2.h" />
-    <ClInclude Include="range.h" />
-    <ClInclude Include="RtMidi.h" />
-    <ClInclude Include="rtmidi_c.h" />
-    <ClInclude Include="rt_midi_compile_parameters.h" />
-    <ClInclude Include="toggle.h" />
+    <ClInclude Include="Input\range.h" />
+    <ClInclude Include="RtMidi\RtMidi.h" />
+    <ClInclude Include="RtMidi\rtmidi_c.h" />
+    <ClInclude Include="RtMidi\rt_midi_compile_parameters.h" />
+    <ClInclude Include="Input\toggle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

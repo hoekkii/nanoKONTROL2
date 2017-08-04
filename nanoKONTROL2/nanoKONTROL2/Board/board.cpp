@@ -1,8 +1,8 @@
 ﻿#include "board.h"
-#include "RtMidi.h"
+#include "../RtMidi/RtMidi.h"
 #include <iostream>
 
-board::board(const string& port_name) : port_name(port_name)
+board::board(const string& port_name) : port_name(port_name), _out(nullptr)
 {
 }
 

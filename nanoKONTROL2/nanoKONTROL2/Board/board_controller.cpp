@@ -1,5 +1,4 @@
 ﻿#include "board_controller.h"
-#include <Windows.h>
 
 void board_controller::update(const uchar& id, const uchar& value, const double& deltatime)
 {
@@ -173,39 +172,6 @@ int board_controller::open()
 			_out->openPort(_port_out, _port_out_name);
 			_out->setErrorCallback(&error_out_callback, this);
 			_board->set_callback(_out);
-			
-			
-			/*const uchar gobal_chanel = 0x41;
-
-			std::vector<uchar> message = // Does something
-			{
-				0xF0, 0x42, gobal_chanel, 0x00, 0x01, 0x13, 0x00,
-				0x1f, 0x12, 0x00, 0xF7
-			};
-
-			/*message =
-			{
-				0xF0, 0x42, gobal_chanel, 0x00, 0x01, 0x13, 0x00,
-				0x00, 0x00, 0x00, 0xF7
-			};
-			
-			_out->sendMessage(&message);
-
-
-			Sleep(500);
-			message.clear();
-			message = { 0xB0, 0x2B, 0x7f };
-			_out->sendMessage(&message);
-			Sleep(500);
-
-			//_out->sendMessage(&message);
-			Sleep(500);
-
-			message = { 0xB0, 0x2B, 0x00 };
-			_out->sendMessage(&message);
-
-			Sleep(100);
-			*/
 		}
 	}
 	catch (...)
@@ -214,11 +180,6 @@ int board_controller::open()
 	}
 	
 	return EXIT_SUCCESS;
-}
-
-void board_controller::initialize(input & in) const
-{
-
 }
 
 void board_controller::callback(double deltatime, std::vector<unsigned char>* buffer, void* rawdata)

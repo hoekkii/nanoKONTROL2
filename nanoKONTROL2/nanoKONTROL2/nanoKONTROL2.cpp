@@ -1,19 +1,20 @@
 ﻿#include "nanoKONTROL2.h"
 
 nanoKONTROL2::nanoKONTROL2() : board("nanoKONTROL2"),
-	track_left(new button(0x3A, "track left")),
-	track_right(new button(0x3B, "track right")),
-	marker_set(new button(0x3C, "marker set")),
-	marker_left(new button(0x3D, "marker left")),
+	track_left	(new button(0x3A, "track left")),
+	track_right	(new button(0x3B, "track right")),
+	marker_set	(new button(0x3C, "marker set")),
+	marker_left	(new button(0x3D, "marker left")),
 	marker_right(new button(0x3E, "marker right")),
-	cycle(new toggle(this, 0x2E, "cycle")),
-	back(new toggle(this, 0x2B, "back")),
-	forward(new toggle(this, 0x2C, "forward")),
-	stop(new toggle(this, 0x2A, "stop")),
-	play(new toggle(this, 0x29, "play")),
-	record(new toggle(this, 0x2D, "record")),
-	groups(new group*[NANO_KONTROL2_GROUP_SIZE])
+	cycle		(new toggle(this, 0x2E, "cycle")),
+	back		(new toggle(this, 0x2B, "back")),
+	forward		(new toggle(this, 0x2C, "forward")),
+	stop		(new toggle(this, 0x2A, "stop")),
+	play		(new toggle(this, 0x29, "play")),
+	record		(new toggle(this, 0x2D, "record")),
+	groups		(new group*[NANO_KONTROL2_GROUP_SIZE])
 {
+	// Initialize groups
 	for (uchar i = 0; i < NANO_KONTROL2_GROUP_SIZE; i++)
 		groups[i] = new group(this, i);
 }

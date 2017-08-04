@@ -18,63 +18,63 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RtMidi.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="rtmidi_c.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="nanoKONTROL2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="input.cpp">
+    <ClCompile Include="RtMidi\RtMidi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="button.cpp">
+    <ClCompile Include="RtMidi\rtmidi_c.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="toggle.cpp">
+    <ClCompile Include="Input\input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="board_controller.cpp">
+    <ClCompile Include="Input\button.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="board.cpp">
+    <ClCompile Include="Input\toggle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="range.cpp">
+    <ClCompile Include="Input\range.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Board\board.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Board\board_controller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="RtMidi.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="rtmidi_c.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="nanoKONTROL2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="input.h">
+    <ClInclude Include="RtMidi\rt_midi_compile_parameters.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="button.h">
+    <ClInclude Include="RtMidi\RtMidi.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="toggle.h">
+    <ClInclude Include="RtMidi\rtmidi_c.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="board_controller.h">
+    <ClInclude Include="Input\input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="board.h">
+    <ClInclude Include="Input\button.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="range.h">
+    <ClInclude Include="Input\toggle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="rt_midi_compile_parameters.h">
+    <ClInclude Include="Input\range.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Board\board.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Board\board_controller.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

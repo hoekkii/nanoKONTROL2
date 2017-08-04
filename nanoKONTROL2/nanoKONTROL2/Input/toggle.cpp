@@ -1,6 +1,6 @@
 ﻿#include "toggle.h"
-#include <iostream>
-#include "board.h"
+#include "../Board/board.h"
+#include "button.h"
 
 toggle::toggle(board* target, const uchar& id, const string& name) : input(id, name), _target(target)
 {
@@ -29,7 +29,7 @@ void toggle::toggle_value(const bool& value)
 
 void toggle::change(const bool& new_state, const double& deltatime)
 {
-	auto target = value() > 64;
+	auto target = value() > button::threshold;
 	if (!_toggle_value && target)
 	{
 		toggle_value(true);

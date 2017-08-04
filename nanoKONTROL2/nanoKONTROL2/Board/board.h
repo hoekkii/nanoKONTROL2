@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "input.h"
+#include "../Input/input.h"
 #include <functional>
 
 class RtMidiOut;

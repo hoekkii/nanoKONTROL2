@@ -32,11 +32,11 @@
  */
 
 #pragma once
-#include "input.h"
-#include "button.h"
-#include "board.h"
-#include "toggle.h"
-#include "range.h"
+#include "Board/board.h"
+#include "Input/input.h"
+#include "Input/button.h"
+#include "Input/toggle.h"
+#include "Input/range.h"
 
 #define NANO_KONTROL2_GROUP_SIZE 8
 

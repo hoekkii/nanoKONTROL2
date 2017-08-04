@@ -10,6 +10,7 @@ public:
 
 	int setup();
 	int open();
+	void initialize(input& in) const;
 
 private:
 	const bool _use_out;

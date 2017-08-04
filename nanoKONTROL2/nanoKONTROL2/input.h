@@ -1,9 +1,10 @@
 ﻿#pragma once
 #include <vector>
 
-typedef void(*input_callback) (void* data, void* in, const bool& new_state, const double& deltatime);
 typedef unsigned char uchar;
 typedef std::string string;
+typedef void(*input_callback) (void* data, void* in, const bool& new_state, const double& deltatime);
+typedef void(*output_callback) (std::vector<uchar>* data);
 
 class input
 {
@@ -21,7 +22,7 @@ public:
 	void value(const uchar& value);
 	bool is_min() const;
 	bool is_max() const;
-	input_callback callback = nullptr;
+	input_callback callback_in = nullptr;
 
 private:
 	const uchar _id;

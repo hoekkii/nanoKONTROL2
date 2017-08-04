@@ -52,9 +52,9 @@ void master_slider_callback(void* data, void* in, const bool& new_state, const d
 int main()
 {
 	nanoKONTROL2 nano_kontrol2 { };
-	nano_kontrol2.groups[0]->slider->callback = &master_slider_callback;
+	nano_kontrol2.groups[0]->slider->callback_in = &master_slider_callback;
 
-	board_controller controller(reinterpret_cast<board*>(&nano_kontrol2), false);
+	board_controller controller(reinterpret_cast<board*>(&nano_kontrol2), true);
 
 	// Setup
 	auto result = controller.setup();

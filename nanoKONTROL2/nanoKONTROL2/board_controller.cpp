@@ -1,4 +1,5 @@
 ﻿#include "board_controller.h"
+#include <Windows.h>
 
 void board_controller::update(const uchar& id, const uchar& value, const double& deltatime)
 {
@@ -13,8 +14,8 @@ void board_controller::update(const uchar& id, const uchar& value, const double&
 	auto new_state = id != _previous_id;
 	target->value(value);
 	target->change(new_state, deltatime);
-	if (target->callback != nullptr)
-		target->callback(this, target, new_state, deltatime);
+	if (target->callback_in != nullptr)
+		target->callback_in(this, target, new_state, deltatime);
 	_previous_id = id;
 }
 
@@ -171,6 +172,40 @@ int board_controller::open()
 		{
 			_out->openPort(_port_out, _port_out_name);
 			_out->setErrorCallback(&error_out_callback, this);
+			_board->set_callback(_out);
+			
+			
+			/*const uchar gobal_chanel = 0x41;
+
+			std::vector<uchar> message = // Does something
+			{
+				0xF0, 0x42, gobal_chanel, 0x00, 0x01, 0x13, 0x00,
+				0x1f, 0x12, 0x00, 0xF7
+			};
+
+			/*message =
+			{
+				0xF0, 0x42, gobal_chanel, 0x00, 0x01, 0x13, 0x00,
+				0x00, 0x00, 0x00, 0xF7
+			};
+			
+			_out->sendMessage(&message);
+
+
+			Sleep(500);
+			message.clear();
+			message = { 0xB0, 0x2B, 0x7f };
+			_out->sendMessage(&message);
+			Sleep(500);
+
+			//_out->sendMessage(&message);
+			Sleep(500);
+
+			message = { 0xB0, 0x2B, 0x00 };
+			_out->sendMessage(&message);
+
+			Sleep(100);
+			*/
 		}
 	}
 	catch (...)
@@ -181,16 +216,20 @@ int board_controller::open()
 	return EXIT_SUCCESS;
 }
 
+void board_controller::initialize(input & in) const
+{
+
+}
+
 void board_controller::callback(double deltatime, std::vector<unsigned char>* buffer, void* rawdata)
 {
-	std::cout
-		<< "Receiving: "
-		<< static_cast<int>((*buffer)[0])
-		<< " : "
-		<< static_cast<int>((*buffer)[1])
-		<< " : "
-		<< static_cast<int>((*buffer)[2])
-		<< std::endl;
+	std::cout << "Receiving: ";
+	auto buff = *buffer;
+	for (auto k : buff)
+	{
+		std::cout << static_cast<int>(k) << " : ";
+	}
+	std::cout << std::endl;
 
 	try
 	{

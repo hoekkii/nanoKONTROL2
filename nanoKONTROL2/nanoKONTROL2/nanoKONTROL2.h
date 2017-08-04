@@ -1,4 +1,9 @@
 ﻿/* 
+ * Additional info:
+ *		http://www.korg.com/us/support/download/product/0/159/
+ * 
+ * 
+ * 
  * SliderGroup [8] <number + index>
  *	- Slider	:  0 : 0x00
  *  - Knob		: 16 : 0x10
@@ -46,12 +51,12 @@ public:
 		toggle * const m;
 		toggle * const r;
 
-		explicit group(const uchar& index) :
+		explicit group(board* target, const uchar& index) :
 			slider(new range(0x00 + index, "Slider")),
 			knob(new range(0x10 + index, "Knob")),
-			s(new toggle(0x20 + index, "S")),
-			m(new toggle(0x30 + index, "M")),
-			r(new toggle(0x40 + index, "R")) { }
+			s(new toggle(target, 0x20 + index, "S")),
+			m(new toggle(target, 0x30 + index, "M")),
+			r(new toggle(target, 0x40 + index, "R")) { }
 		~group() { delete slider, knob, s, m, r; }
 	};
 

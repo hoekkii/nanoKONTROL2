@@ -1,4 +1,5 @@
 ﻿#include "input.h"
+#include <iostream>
 
 input::input(const uchar& id, const string& name) : _id(id), _name(name)
 {
